@@ -46,7 +46,7 @@ client.on("messageCreate", async (message) => {
 
   // 🎵 牢大 → 只貼歌（優先判斷）
   if (content === "牢大想你了") {
-    return message.reply("🎵 https://www.youtube.com/watch?v=RgKAFK5djSk");
+    return message.reply("🎵 https://youtu.be/cMXny9TlElU?si=GGH-iIuV6NFe-LMD");
   }
 
   // 📖 解答之書
