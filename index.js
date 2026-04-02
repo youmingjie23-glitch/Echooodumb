@@ -44,9 +44,14 @@ client.on("messageCreate", async (message) => {
 
   const content = message.content.trim();
 
+  // 🎵 牢大 → 只貼歌（優先判斷）
+  if (content === "牢大想你了") {
+    return message.reply("🎵 https://www.youtube.com/watch?v=RgKAFK5djSk");
+  }
+
+  // 📖 解答之書
   const shouldReply =
-    content === "!book" ||
-    content.startsWith("!問") ||
+    content.startsWith("牢大") ||
     content.includes("解答之書");
 
   if (!shouldReply) return;
