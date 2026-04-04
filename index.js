@@ -43,6 +43,16 @@ client.on("messageCreate", async (message) => {
   if (message.author.bot) return;
 
   const content = message.content.trim();
+  const lowerContent = content.toLowerCase();
+
+  // 🚁 看到直升機 / helicopter / helicopters 就回 曼巴 out
+  if (
+    content.includes("直升機") ||
+    lowerContent.includes("helicopter") ||
+    lowerContent.includes("helicopters")
+  ) {
+    return message.reply("曼巴 out");
+  }
 
   // 🎵 牢大 → 只貼歌（優先判斷）
   if (content === "牢大想你了") {
