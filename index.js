@@ -6,6 +6,14 @@ const answers = require("./answers.json");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent
+  ]
+});
+
 app.get("/", (req, res) => {
   res.send("Bot is running.");
 });
@@ -20,14 +28,6 @@ app.get("/health", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Web server running on port ${PORT}`);
-});
-
-const client = new Client({
-  intents: [
-    GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.MessageContent
-  ]
 });
 
 function getRandomAnswer() {
